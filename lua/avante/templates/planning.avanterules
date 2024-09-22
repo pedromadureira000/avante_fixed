@@ -1,0 +1,21 @@
+{% if code_lang != "markdown" %}
+<instruction>
+Be concise and brief. Use fewer words. Convey only essentials.
+</instruction>
+{% if selected_code %}
+<code>
+```{{code_lang}}
+{{selected_code}}
+```
+</code>
+{% else %}
+{% endif %}
+<question>{{question}}</question>
+{% else %}
+{% if selected_code %}
+{{selected_code}}
+{{question}}
+{% else %}
+{{question}}
+{% endif %}
+{% endif %}
